@@ -1,0 +1,22 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "lite-server --baseDir=\"public\"",
+    "watch": "sass --watch src/scss:public/css",
+    "start": "concurrently \"npm run watch\" \"npm run dev\""
+  },
+  "author": "Wai Yeung Lam",
+  "license": "private",
+  "private": true,
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "bootstrap": "^5.3.3",
+    "concurrently": "^8.2.2",
+    "lite-server": "^2.6.1",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.77.8"
+  }
+}

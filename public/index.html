@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INM320BB Assignment 5</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body>
+    <!-- Bootstrap SVG Icons -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="search" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </symbol>
+        <symbol id="bell">
+            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"/>
+        </symbol>
+        <symbol id="search">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+        </symbol>
+        <symbol id="plusSq">
+            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+        </symbol>
+        <symbol id="chart">
+            <path d="M15.985 8.5H8.207l-5.5 5.5a8 8 0 0 0 13.277-5.5zM2 13.292A8 8 0 0 1 7.5.015v7.778zM8.5.015V7.5h7.485A8 8 0 0 0 8.5.015"/>
+        </symbol>
+        <symbol id="ticket">
+            <path d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zm4-1v1h1v-1zm1 3v-1H4v1zm7 0v-1h-1v1zm-1-2h1v-1h-1zm-6 3H4v1h1zm7 1v-1h-1v1zm-7 1H4v1h1zm7 1v-1h-1v1zm-8 1v1h1v-1zm7 1h1v-1h-1z"/>
+        </symbol>
+        <symbol id="bulb">
+            <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5"/>
+        </symbol>
+        <symbol id="people">
+            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+        </symbol>
+        <symbol id="agent">
+            <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6m5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1z"/>
+        </symbol>
+        <symbol id="book">
+            <path d="M5 0h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2 2 2 0 0 1-2 2H3a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1H1a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v9a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1H3a2 2 0 0 1 2-2"/>
+            <path d="M1 6v-.5a.5.5 0 0 1 1 0V6h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V9h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 2.5v.5H.5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1H2v-.5a.5.5 0 0 0-1 0"/>
+        </symbol>
+        <symbol id="gear">
+            <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+        </symbol>
+        <symbol id="bookmark">
+            <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5z"/>
+            <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1z"/>
+        </symbol>
+        <symbol id="dash">
+            <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8"/>
+        </symbol>
+        <symbol id="burger">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+        </symbol>
+    </svg>
+
+    <!-- Full Page -->
+    <div class="container-fluid">
+        <div class="row ">
+            <!-- Sidebar -->
+            <div class="col-lg-2 p-0 sidebar offcanvas-lg offcanvas-start overflow-auto" id="sidebar" aria-labelledby="offcanvas">
+                <div class="d-flex flex-column bg-dark h-100 overflow-auto">
+                    <a href="#" class="d-inline-flex align-items-center justify-content-center mt-4 mb-3  text-decoration-none">
+                        <img src="assets/logo.svg" alt="logo" width="32" height="32">
+                        <span class="text-secondary px-2">Dashboard Kit</span>
+                    </a>
+                    <hr>
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a href="#" class="border-start border-2 nav-link active d-flex align-items-center" aria-current="page">
+                                <svg class="bi pe-none me-3 text-light" fill="currentColor" width="16" height="16"><use xlink:href="#chart"/></svg>
+                                Overview
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link d-flex align-items-center">
+                                <svg class="bi pe-none me-3 text-light" fill="currentColor" width="16" height="16"><use xlink:href="#ticket"/></svg>
+                                Tickets
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link d-flex align-items-center">
+                                <svg class="bi pe-none me-3 text-light" fill="currentColor" width="16" height="16"><use xlink:href="#bulb"/></svg>
+                                Ideas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link d-flex align-items-center">
+                                <svg class="bi pe-none me-3 text-light" fill="currentColor" width="16" height="16"><use xlink:href="#people"/></svg>
+                                Contacts
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link d-flex align-items-center">
+                                <svg class="bi pe-none me-3 text-light" fill="currentColor" width="16" height="16"><use xlink:href="#agent"/></svg>
+                                Agents
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link d-flex align-items-center">
+                                <svg class="bi pe-none me-3 text-light" fill="currentColor" width="16" height="16"><use xlink:href="#book"/></svg>
+                                Articles
+                            </a>
+                        </li>
+                    </ul>
+                    <hr class="text-light">
+                    <ul class="nav nav-pills flex-column mb-5">
+                        <li>
+                            <a href="#" class="nav-link d-flex align-items-center">
+                                <svg class="bi pe-none me-3 text-light" fill="currentColor" width="16" height="16"><use xlink:href="#gear"/></svg>
+                                Settings
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link d-flex align-items-center">
+                                <svg class="bi pe-none me-3 text-light" fill="currentColor" width="16" height="16"><use xlink:href="#bookmark"/></svg>
+                                Subscription
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Main Body -->
+            <main class="col-lg-10 background">
+                <div class="ms-xs-auto px-2">
+                    <!-- Header -->
+                    <div class="d-flex justify-content-between align-items-center pt-3 pb-2 my-3">
+                        <div class="d-flex align-items-center">
+                            <button type="button" data-bs-toggle="offcanvas" href="#sidebar" class="btn d-lg-none"><svg class="bi text-black" fill="currentColor"><use xlink:href="#burger"/></svg></button>
+                            <h1 class="h2">Overview</h1>
+                        </div>
+                        <div class="d-flex">
+                            <div class="btn-toolbar border-end">
+                                <div class="btn-group px-3">
+                                    <button type="button" class="btn btn-sm"><svg class="bi text-secondary" fill="currentColor"><use xlink:href="#search"/></svg></button>
+                                    <button type="button" class="btn btn-sm">
+                                        <svg class="bi text-secondary" fill="currentColor"><use xlink:href="#bell"/></svg>
+                                        <span class="position-absolute top-40 end-0 translate-middle p-1 bg-primary border border-light rounded-circle"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <a href="#" class="d-flex align-items-center text-decoration-none ps-3">
+                                    <span class="text-black d-none d-sm-block pe-3">Jones Ferdinand</span>
+                                    <img src="https://github.com/mdo.png" alt="mdo" width="48" height="48" class="rounded-circle img-thumbnail">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="row row-cols-2 row-cols-sm-4 mx-n1">
+                        <div class="col">
+                            <button type="button" class="w-100 py-3 btn border bg-white d-flex flex-column align-items-center row-gap-2">
+                                <span class="fs-5 text-body-tertiary">Unresolved</span>
+                                <span class="h1 text-black">60</span>
+                            </button>
+                        </div>   
+                        <div class="col">
+                            <button type="button" class="w-100 py-3 btn border border-primary bg-white d-inline-flex flex-column align-items-center row-gap-2">
+                                <span class="fs-5 text-primary">Overdue</span>
+                                <span class="h1 text-primary">16</span>
+                            </button>
+                        </div> 
+                        <div class="col">   
+                            <button type="button" class="w-100 py-3 btn border bg-white d-inline-flex flex-column align-items-center row-gap-2">
+                                <span class="fs-5 text-body-tertiary">Open</span>
+                                <span class="h1 text-black">43</span>
+                            </button>
+                        </div>
+                        <div class="col"> 
+                            <button type="button" class="w-100 py-3 btn border bg-white d-inline-flex flex-column align-items-center row-gap-2">
+                                <span class="fs-5 text-body-tertiary">On hold</span>
+                                <span class="h1 text-black">64</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Chart -->
+                    <div class="row border mx-0 my-3 bg-white">              
+                        <div class="col-md-8 d-flex flex-column justify-content-center px-4 my-4">
+                            <span class="h5">Today's trends</span>
+                            <div class="d-inline-flex justify-content-between">
+                                <span class="text-body-tertiary">as of 25 May 2019, 09:41 PM</span>
+                                <span class="d-flex align-items-center column-gap-3">
+                                    <svg class="bi text-primary" fill="currentColor" width="48" height="32"><use xlink:href="#dash"/></svg>
+                                    <span class="text-body-tertiary">Today</span>
+                                    <svg class="bi text-body-tertiary" fill="currentColor" width="48" height="32"><use xlink:href="#dash"/></svg>
+                                    <span class="text-body-tertiary">Yesterday</span>
+                                </span>
+                            </div>
+                            <img src="assets/full graph.png" alt="chart" class="img-fluid mt-5 me-5">
+                        </div>
+                        <div class="col-md-4 p-0">
+                            <div class="d-flex flex-md-column flex-wrap h-100">
+                                <div class="border py-3 d-flex flex-column align-items-center justify-content-around flex-grow-1 col-12 col-sm-6 col-md-12">
+                                    <span class="fs-5 text-body-tertiary">Resolved</span>
+                                    <span class="h3">449</span>
+                                </div>
+                                <div class="border py-3 d-flex flex-column align-items-center justify-content-around flex-grow-1 col-12 col-sm-6 col-md-12">
+                                    <span class="fs-5 text-body-tertiary">Received</span>
+                                    <span class="h3">426</span>
+                                </div>
+                                <div class="border py-3 d-flex flex-column align-items-center justify-content-around flex-grow-1 col-12 col-sm-6 col-md-12">
+                                    <span class="fs-5 text-body-tertiary">Average first response time</span>
+                                    <span class="h3">33m</span>
+                                </div>
+                                <div class="border py-3 d-flex flex-column align-items-center justify-content-around flex-grow-1 col-12 col-sm-6 col-md-12">
+                                    <span class="fs-5 text-body-tertiary">Average response time</span>
+                                    <span class="h3">3h 8m</span>
+                                </div>
+                                <div class="border py-3 d-flex flex-column align-items-center flex-grow-1 justify-content-around col-12 col-sm-6 col-md-12">
+                                    <span class="fs-5 text-body-tertiary">Resolution within SLA</span>
+                                    <span class="h3">94%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cards -->
+                    <div class="row mt-4 row-gap-4 mb-4">
+                        <div class="col-md-6 col-xs-12">
+                            <div class="card">
+                                <div class="card-body border-bottom-0">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h4 class="card-title">Unresolved tickets</h4>
+                                        <a href="#" class="text-decoration-none text-primary">View details</a>
+                                    </div>
+                                    <p class="card-text text-body-tertiary fs-6">Group: <span class="text-black">Support</span></p>
+                                </div>
+                                <ul class="list-group list-group-flush border-top-0">
+                                    <li class="list-group-item d-inline-flex justify-content-between align-items-center py-2">
+                                        <p>Waiting on Feature Request</p>
+                                        <p class="text-body-tertiary">4238</p>
+                                    </li>
+                                    <li class="list-group-item d-inline-flex justify-content-between align-items-center py-2">
+                                        <p>Awaiting Customer Response</p>
+                                        <p class="text-body-tertiary">1005</p>
+                                    </li>
+                                    <li class="list-group-item d-inline-flex justify-content-between align-items-center py-2">
+                                        <p>Awaiting Developer Fix</p>
+                                        <p class="text-body-tertiary">914</p>
+                                    </li>
+                                    <li class="list-group-item d-inline-flex justify-content-between align-items-center py-2">
+                                        <p>Pending</p>
+                                        <p class="text-body-tertiary">281</p>
+                                    </li>
+                                </ul>
+                            </div> 
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="card">
+                                <div class="card-body border-bottom-0">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title">Tasks</h5>
+                                        <a href="#" class="text-decoration-none text-primary">View all</a>
+                                    </div>
+                                    <p class="card-text text-body-tertiary fs-6">Today</p>
+                                </div>
+                                <ul class="list-group list-group-flush border-top-0">
+                                    <li class="list-group-item d-inline-flex justify-content-between align-items-center py-2">
+                                        <p class="text-body-tertiary">Create new task</p>
+                                        <button type="button" class="btn btn-sm"><svg class="bi bg-body-secondary text-secondary" fill="currentColor"><use xlink:href="#plusSq"/></svg></button>
+                                    </li>
+                                    <li class="list-group-item d-inline-flex justify-content-between align-items-center py-2">
+                                        <div>
+                                            <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <p>Finish ticket update</p>
+                                        </div>
+                                        <span class="badge bg-warning text-white">URGENT</span>
+                                    </li>
+                                    <li class="list-group-item d-inline-flex justify-content-between align-items-center py-2">
+                                        <div>
+                                            <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <p>Create new ticket example</p>
+                                        </div>
+                                        <span class="badge bg-success text-white">NEW</span>
+                                    </li>
+                                    <li class="list-group-item d-inline-flex justify-content-between align-items-center py-2">
+                                        <div>
+                                            <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckChecked" checked>
+                                            <label class="form-check-label" for="flexCheckChecked">
+                                            <p>Update ticket report</p>
+                                        </div>
+                                        <span class="badge bg-body-secondary text-secondary">DEFAULT</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

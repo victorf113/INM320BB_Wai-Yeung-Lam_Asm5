@@ -1,0 +1,48 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+$position-values: (
+  0: 0,
+  40: 40%,
+  50: 50%,
+  100: 100%
+);
+
+// fonts variable
+$nav-link-color: #FFFFFF80;
+$nav-pills-border-radius: 0;
+$nav-pills-link-active-bg: #FFFFFF25;
+$font-size-base: 0.8rem;
+$headings-margin-bottom: 0;
+
+$form-check-input-border-radius: 1rem;
+$offcanvas-horizontal-width: 250px;
+
+// Include any default variable overrides here (though functions won't be available)
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Google Font: Mulish
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+// Then add additional custom code here
+:root {
+  --bs-body-font-family: "Mulish", sans-serif;
+}
+
+.bi {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+}
+
+.background {
+  background-color: #F7F8FC;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
